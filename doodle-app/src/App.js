@@ -1,62 +1,30 @@
-// import DrawingPad from './components/DrawingPad.js'
-// import { useEffect, useRef, useState } from 'react';
+
 import './App.css';
 import DrawingPad from './components/DrawingPad.js'
+import ColorButton from './components/ColorButton.js'
 
 function App() {
 
-  // const canvasRef = useRef(null)
-  // const contextRef = useRef(null)
-  // const [isDrawing, setIsDrawing] = useState(false)
+  const colors = ['#005f73', '#0a9396', '#94d2bd', '#e9d8a6', '#ee9b00', '#ca6702', '#bb3e03', '#ae2012', '#9b2226' ]
 
-  // useEffect(() => {
-  //   const canvas = canvasRef.current;
-  //   canvas.width = window.innerWidth * 2;
-  //   canvas.height = window.innerHeight *2;
-  //   canvas.style.width = `${window.innerWidth}px`;
-  //   canvas.style.height = `${window.innerHeight}px`;
-
-  //   const context = canvas.getContext("2d");
-  //   context.scale(2,2)
-  //   context.lineCap = "round"
-  //   context.strokeStyle = "#cccccc"
-  //   context.lineWidth = 5
-
-  //   contextRef.current = context;
-
-  // }, [])
-
-  // const startDrawing = ({nativeEvent}) => {
-  //   const {offsetX, offsetY} = nativeEvent
-  //   contextRef.current.beginPath()
-  //   contextRef.current.moveTo(offsetX,offsetY)
-  //   setIsDrawing(true)
-  // }
-
-  // const finishDrawing= () => {
-  //   contextRef.current.closePath()
-  //   setIsDrawing(false)
-  // }
-
-  // const draw = ({nativeEvent}) => {
-  //   if (!isDrawing) {
-  //     return
-  //   }
-  //   const {offsetX, offsetY} = nativeEvent;
-  //   contextRef.current.lineTo(offsetX, offsetY)
-  //   contextRef.current.stroke();
-  // }
 
   return (
     <div className="App">
-      <h1>My App</h1>
-      <DrawingPad />
-        {/* <canvas
-          onMouseDown={startDrawing}
-          onMouseUp={finishDrawing}
-          onMouseMove={draw}
-          ref={canvasRef}
-        /> */}
+      <h1>doodle.</h1>
+      <div className='drawing-section'>
+        <div className='color-buttons'>
+        <ColorButton color={colors[0]} />
+        <ColorButton color={colors[1]} />
+        <ColorButton color={colors[2]} />
+        <ColorButton color={colors[3]} />
+        <ColorButton color={colors[4]} />
+        <ColorButton color={colors[5]} />
+        <ColorButton color={colors[6]} />
+        <ColorButton color={colors[7]} />
+        <ColorButton color={colors[8]} />
+        </div>
+        <DrawingPad />
+      </div>
     </div>
   );
 }
